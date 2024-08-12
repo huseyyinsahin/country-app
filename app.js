@@ -25,8 +25,8 @@ const searchCountry = (data) => {
 
     const query = searchInput.value.toLowerCase();
 
-    const filteredCountries = data.filter((item) =>
-      item.name.common.toLowerCase().includes(query)
+    const filteredCountries = data.filter(({name:{common}}) =>
+      common.toLowerCase().includes(query)
     );
 
     if (filteredCountries.length === 1) {
